@@ -28,7 +28,7 @@ home.packages = with pkgs; [
     gobuster
     metasploit
     xclip
-    mysql
+    mariadb
     wget
     xwallpaper
     i3lock

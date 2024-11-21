@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/disk/by-id/1980-01-01-00-00-00-00";
+        device = "/dev/vda";
         type = "disk";
         content = {
           type = "gpt";
@@ -23,7 +23,7 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/nix";
-                moutOptions = ["defaults"];
+                mountOptions = ["defaults"];
               };
             };
           };

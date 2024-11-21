@@ -3,8 +3,8 @@
     xdg-utils
     glib
     dracula-theme # gtk themeracula-theme # gtk theme
-    gnome3.adwaita-icon-theme # default gnome cursors
-    gnome3.adwaita-icon-theme # default gnome cursors
+    gnome.adwaita-icon-theme # default gnome cursors
+    gnome.adwaita-icon-theme # default gnome cursors
     xorg.xeyes
   ];
 

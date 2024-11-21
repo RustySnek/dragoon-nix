@@ -8,7 +8,7 @@
   users.users.dragoon = {
     isNormalUser = true;
     extraGroups = ["wheel" "libvirtd" "docker" "adbusers" "input" "video"];
-    password = "skyborne"
+    password = "skyborne";
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
     ];
