@@ -8,12 +8,14 @@
 
 ## Install QEMU/KVM
 ```fish
+git clone https://github.com/RustySnek/dragoon-nix
 cd dragoon-nix/
 # format
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode format hosts/placidusax/disk.nix
 # mount
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode format hosts/placidusax/disk.nix
 # install
+sudo mount -o remount,size=16G /mnt
 sudo nixos-install --flake .#placidusax
 ```
 
