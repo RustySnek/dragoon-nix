@@ -7,12 +7,15 @@
   home-manager.inputs.nixpkgs.follows = "nixpkgs";
   impermanence.url = "github:nix-community/impermanence";
   nur.url = "github:nix-community/NUR";
+  disko.url = "github:nix-community/disko";
+  disko.inputs.nixpkgs.follows = "nixpkgs";
   # tf to do with disko?
 };
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-unstable,
     nil-ls,
+    disko,
     home-manager,
     impermanence,
     nur,
@@ -21,7 +24,7 @@
   nixosConfigurations = (
     import ./hosts {
       inherit (nixpkgs) lib;
-      inherit inputs nixpkgs nixpkgs-unstable home-manager impermanence user nur nil-ls;
+      inherit inputs disko nixpkgs nixpkgs-unstable home-manager impermanence user nur nil-ls;
     }
   );
 };

@@ -1,5 +1,6 @@
 {
   lib,
+  disko,
   home-manager,
   impermanence,
   nur,
@@ -22,6 +23,7 @@
       {
         nixpkgs.config.allowUnfreePredicate = _: true;
       }
+      disko.nixosModules.disko
       impermanence.nixosModules.impermanence
       nur.nixosModules.nur
       unstableModule
