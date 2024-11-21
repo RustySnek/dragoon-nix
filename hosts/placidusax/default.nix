@@ -6,6 +6,7 @@
 }: {
   imports = [
   ./gpg.nix
+  ./disk.nix
   ./misc.nix
   ./audio.nix
   ./users.nix
@@ -13,10 +14,7 @@
   ./gpg.nix
   ./persistance.nix
   ./network.nix
-   #(import ./disk.nix {
-   #  inherit lib;
-   #  disks = ["/dev/nvme0n1"];
-   #})
+  ./boot.nix
 ];
 
 services.passSecretService.enable = true;
@@ -88,5 +86,5 @@ services.postgresql = {
   nix.settings.trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   networking.hostName = "placidusax";
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
