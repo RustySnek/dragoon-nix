@@ -48,13 +48,7 @@ services.postgresql = {
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.configPackages = [ pkgs.xdg-desktop-portal-gtk ];
 
-  swapDevices = [
-    {
-      device = "/nix/persist/swapfile";
-      size = 16 * 1024;
-    }
-  ];
-
+  
   time.timeZone = "Europe/Warsaw";
 
   virtualisation.libvirtd.enable = true;
