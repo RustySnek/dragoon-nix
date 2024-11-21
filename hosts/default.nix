@@ -33,6 +33,7 @@
         nixpkgs.overlays = [nur.overlay unstableOverlay];
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+        home-manager.backupFileExtension = "backup";
 
         home-manager.users.dragoon = import ../users/dragoon;
         home-manager.extraSpecialArgs = {

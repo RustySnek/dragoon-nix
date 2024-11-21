@@ -1,0 +1,21 @@
+general {
+    colors = true
+    interval = 1
+}
+
+order += "cpu_usage"
+cpu_usage {
+    format = "%usage"
+}
+
+order += "memory"
+memory {
+    format = "%used"
+}
+
+
+order += "tztime local"
+tztime local {
+    format = "%H:%M:%S"
+}
+

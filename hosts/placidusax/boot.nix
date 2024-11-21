@@ -29,9 +29,10 @@
     desktopManager.xterm.enable = false;
     windowManager.i3 = {
       package = pkgs.i3-gaps;
-      #configFile = ./i3.conf;
+      configFile = ./i3.conf;
       enable = true;
       extraSessionCommands = ''
+      xrandr --output Virtual-1 --mode 1920x1080
       '';
     };
     displayManager = {
