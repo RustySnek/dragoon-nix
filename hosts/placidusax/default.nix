@@ -51,17 +51,9 @@ services.postgresql = {
   
   time.timeZone = "Europe/Warsaw";
 
-  virtualisation.libvirtd.enable = true;
-  virtualisation.libvirtd.qemu.ovmf.enable = true;
-  programs.dconf.enable = true;
   environment.systemPackages = with pkgs; [
-  unstable.devenv
-  unstable.neovim
-  fzf
-  jq
-  nil
-  firefox
-];
+    unstable.devenv unstable.neovim fzf jq nil floorp nix-index
+  ];
 
   fonts.packages = with pkgs; [
     migu
@@ -74,6 +66,7 @@ services.postgresql = {
     twitter-color-emoji
     nerdfonts
   ];
+
   nix.settings.trusted-users = ["dragoon" "root"];
   nix.settings.substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org" "https://devenv.cachix.org"];
   nix.settings.trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];
