@@ -15,7 +15,7 @@
   };
 
   environment.persistence."/nix/persist" = {
-    users.rustysnek.directories = [
+    users.dragoon.directories = [
       "Projects"
       "Documents"
       "Music"

@@ -49,7 +49,7 @@ home.packages = with pkgs; [
 
 services.udiskie.enable = true;
   xdg.enable = true;
-  home.persistence."/nix/persist/home/rustysnek" = {
+  home.persistence."/nix/persist/home/dragoon" = {
     directories = [
       ".local/share/docker"
       ".local/state/wireplumber"
