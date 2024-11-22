@@ -21,7 +21,7 @@ services.postgresql = {
   enable = true;
   ensureDatabases = [ "mydatabase" ];
   enableTCPIP = true;
-  port = 5432;
+  settings.port = 5432;
   authentication = pkgs.lib.mkOverride 10 ''
  
  #...
@@ -39,7 +39,7 @@ services.postgresql = {
   services.devmon.enable = true;
   services.udisks2.enable = true;
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
   services.avahi.openFirewall = true;
 
   xdg.portal.enable = true;

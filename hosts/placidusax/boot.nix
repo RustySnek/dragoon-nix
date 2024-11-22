@@ -19,13 +19,13 @@
   boot.kernelModules = ["kvm-amd"];
   boot.initrd.kernelModules = ["nvme" "dm-snapshot" "i2c-dev" "i2c-piix4" "vfio" "vfio_iommu_type1" "vfio_pci"];
   boot.initrd.checkJournalingFS = false;
+  services.libinput.enable = true;
   services.xserver = {
     enable = true;
-    layout = "us";
-    libinput = {
-      enable = false;
-    };
+    xkb.layout = "us";
     desktopManager.xterm.enable = false;
+
+    displayManager.lightdm.enable = true;
     windowManager.i3 = {
       package = pkgs.i3-gaps;
       configFile = ./i3.conf;
@@ -33,16 +33,13 @@
       extraSessionCommands = ''
       xrandr --output Virtual-1 --mode 1920x1080
       '';
-    };
-    displayManager = {
-      defaultSession = "none+i3";
-      lightdm.enable = true;
-    };
+    }; 
   };
+  services.displayManager.defaultSession = "none+i3";
 
   boot.blacklistedKernelModules = [];
 
   hardware.enableRedistributableFirmware = true;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 }
  
