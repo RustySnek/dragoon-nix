@@ -19,9 +19,9 @@
       "Documents"
       "Music"
       "Pictures"
-      ".config/BraveSoftware"
       ".var/app/"
       ".mozilla"
+      ".floorp"
     ];
   };
 }
