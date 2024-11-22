@@ -19,8 +19,6 @@
       "Documents"
       "Music"
       "Pictures"
-      ".var/app/"
-      ".mozilla"
       ".floorp"
     ];
   };

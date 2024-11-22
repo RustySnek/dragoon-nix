@@ -7,7 +7,6 @@
   imports = [
   ./gpg.nix
   ./disk.nix
-  ./misc.nix
   ./audio.nix
   ./users.nix
   ./docker.nix
@@ -38,7 +37,6 @@ services.postgresql = {
   '';
 };  
   services.devmon.enable = true;
-  services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
@@ -52,7 +50,8 @@ services.postgresql = {
   time.timeZone = "Europe/Warsaw";
   environment.etc.hosts.mode = "0644";
   environment.systemPackages = with pkgs; [
-    unstable.devenv unstable.neovim fzf jq nil floorp nix-index
+    unstable.devenv unstable.neovim 
+    fzf jq nil floorp glib man-pages-posix
   ];
 
   fonts.packages = with pkgs; [
@@ -64,9 +63,11 @@ services.postgresql = {
     twemoji-color-font
     openmoji-color
     twitter-color-emoji
-    nerdfonts
+    (pkgs.nerdfonts.override {fonts = ["VictorMono"];})
   ];
 
+  services.dbus.enable = true;
+  security.polkit.enable = true;
   nix.settings.trusted-users = ["dragoon" "root"];
   nix.settings.substituters = ["https://nix-community.cachix.org" "https://cache.nixos.org" "https://devenv.cachix.org"];
   nix.settings.trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=" "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="];

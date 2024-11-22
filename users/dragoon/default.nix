@@ -17,13 +17,11 @@ home.packages = with pkgs; [
     git
     gotop
     neofetch
-    #unzip
     xclip
     mariadb
     xwallpaper
     rofi
     dmenu
-    #vimPlugins.nvim-treesitter
     ungoogled-chromium
   ];
 
