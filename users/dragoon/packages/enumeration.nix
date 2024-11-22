@@ -8,5 +8,6 @@
       inetutils
       enum4linux
       rustcat
+      tcpdump
   ];
 }
