@@ -50,7 +50,7 @@ services.postgresql = {
   time.timeZone = "Europe/Warsaw";
   environment.etc.hosts.mode = "0644";
   environment.systemPackages = with pkgs; [
-    unstable.devenv unstable.neovim 
+    unstable.devenv unstable.neovim fastcompmgr
     fzf jq nil floorp glib man-pages-posix
   ];
 
