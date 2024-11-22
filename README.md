@@ -20,6 +20,8 @@ sudo nixos-install --flake .#placidusax
 ```
 
 ## Placidusax
+Tool list [here](https://github.com/rustysnek/dragoon-nix/blob/master/TOOLS.md)
+
 user: `dragoon`
 
 password: `skyborne`
