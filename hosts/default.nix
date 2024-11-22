@@ -5,10 +5,12 @@
   impermanence,
   nur,
   nixpkgs-unstable,
+  nixpkgs-legacy,
   ...
 }: let
   unstableOverlay = final: prev: {
     unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+    legacy = nixpkgs-legacy.legacyPackages.${prev.system};
   };
   unstableModule = {
     config,
