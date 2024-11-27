@@ -20,7 +20,9 @@
   boot.initrd.kernelModules = ["nvme" "dm-snapshot" "i2c-dev" "i2c-piix4" "vfio" "vfio_iommu_type1" "vfio_pci"];
   boot.initrd.checkJournalingFS = false;
   services.libinput.enable = true;
+  services.spice-vdagentd.enable = true;
   services.xserver = {
+    videoDrivers = ["qxl"];
     enable = true;
     xkb.layout = "us";
     desktopManager.xterm.enable = false;
